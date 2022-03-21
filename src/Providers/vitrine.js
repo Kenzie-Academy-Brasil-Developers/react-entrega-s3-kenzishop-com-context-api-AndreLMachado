@@ -1,10 +1,10 @@
-import { createContext, useState } from "react"; //importando
+import { createContext } from "react";
 import { Products } from "./products";
 
-export const CatalogueContext = createContext(Products); //criando contexto
+export const CatalogueContext = createContext([]);
 
 export const CatalogueProvider = ({ children }) => {
-  const [catalogue, setCatalogue] = useState(Products);
+  const catalogue = Products;
 
   return (
     <CatalogueContext.Provider value={{ catalogue }}>

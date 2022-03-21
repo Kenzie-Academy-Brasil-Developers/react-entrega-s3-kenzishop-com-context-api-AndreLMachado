@@ -5,14 +5,14 @@ export const CartContext = createContext([]);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  console.log(cart);
+
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
 
   const removeFromCart = (item) => {
-    const newCart = cart.filter(
-      (itemOnCart) => itemOnCart.descricao !== item.descricao
-    );
+    const newCart = cart.filter((itemOnCart) => itemOnCart.id !== item.id);
     setCart(newCart);
   };
 

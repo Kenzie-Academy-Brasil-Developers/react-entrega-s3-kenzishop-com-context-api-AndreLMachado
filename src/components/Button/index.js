@@ -1,20 +1,17 @@
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { CatalogueContext } from "../../Providers/vitrine";
 
 const Button = ({ type, item }) => {
   const { addToCart, removeFromCart } = useContext(CartContext);
-  const { addToCatalogue, removeFromCatalogue } = useContext(CatalogueContext);
 
-  const text = type === "catalogue" ? "Ad to Cart" : "Remove from cart";
+  const text =
+    type === "cart" ? "Adicionar ao  Carrinho" : "Remover do Carrinho";
 
   const handleClick = () => {
-    if (type === "catalogue") {
-      removeFromCatalogue(item);
+    if (type === "cart") {
       addToCart(item);
     } else {
       removeFromCart(item);
-      addToCatalogue(item);
     }
   };
   return <button onClick={handleClick}>{text}</button>;

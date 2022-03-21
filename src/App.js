@@ -1,19 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import ProductsList from "./components/ProductsList";
-import { CartProvider } from "./Providers/cart";
-import { CatalogueProvider } from "./Providers/vitrine";
+import Routes from "./router";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <CatalogueProvider>
-          <CartProvider>
-            <ProductsList type={"catalogue"} />
-            <ProductsList type={"cart"} />
-          </CartProvider>
-        </CatalogueProvider>
-      </header>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }
