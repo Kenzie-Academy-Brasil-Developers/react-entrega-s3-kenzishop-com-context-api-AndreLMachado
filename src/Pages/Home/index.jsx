@@ -1,6 +1,5 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import ProductsList from "../../components/ProductsList";
-import Cart from "../Cart";
 
 import "./style.css";
 
